@@ -3,12 +3,12 @@
 @import "neat";
 
 @import "variables";
-
-@import "base/base";
+@import "base/normalize";
+@import "base/elements";
 @import "base/icons-line";
 @import "base/icons-block";
 @import "base/icons-social";
-@import "base/normalize";
+
 @import "layout/layout";
 @import "layout/components";
 @import "modules/module";
