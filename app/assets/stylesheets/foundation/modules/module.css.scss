@@ -1,0 +1,353 @@
+/* sections */
+.header,.footer{
+  @extend %clearance;
+}
+.header{
+  background:$color-primary;
+  -webkit-border-radius: 0 0 $box-radius-big $box-radius-big;
+  -moz-border-radius:0 0 $box-radius-big $box-radius-big;
+  border-radius: 0 0 $box-radius-big $box-radius-big;
+}
+.footer{
+  text-align:left;
+  margin-top:$base-margin;
+}
+/*components*/
+.inner{
+  @extend %padding-all;
+}
+.outer{
+  @extend %margin-all;
+}
+.box{
+  @include boxRadius(big);
+  padding: $base-padding / 2;
+}
+.widget{
+  @extend .box;
+}
+.widget.outline{
+  border: $color-border $base-border-thickness solid;
+  padding:0;
+  overflow:hidden;
+  h4{
+    margin-top:0;
+    -webkit-border-radius: 0 0 $box-radius-big 0;
+    -moz-border-radius: 0 0 $box-radius-big 0;
+    border-radius: 0 0 $box-radius-big 0;
+    padding:$base-padding/2;
+    color:$color-white;
+    background-color:$color-primary;
+    width:20em;
+    margin-bottom:0;
+  }
+}
+.widget.filled{
+  background-color: lighten($color-primary,70);
+}
+
+.login.front{
+  display:block;
+  background-color: $color-primary;
+  color: $color-white;
+  @extend %boxRadius-big;
+  @include media($mobile) {
+    display:none;
+    background:none;
+    h4{
+      display:none;
+    }
+  }
+}
+.users .login.front{
+  display:block;
+  @include media($mobile) {
+    h5{
+      background:$color-primary;
+      padding:$base-padding;
+      @include boxRadius(big);
+    }
+  }
+}
+.login.front label, .login.front a, .login.front p, .login.front.error {
+  color: $color-white;
+  @include media($mobile) {
+    color:$color-primary;
+  }
+}
+.login.front input[type=text]{
+  border:none;
+}
+.login-reveal{
+  display:none;
+  @include media($mobile) {
+    display:inline;
+  }
+}
+.users .login-reveal{
+  display:none;
+}
+.resetpw{
+    display:inline-block;
+    padding-bottom:$base-padding/2;
+}
+.login-hybrid .control span{
+  margin-right: 30px;
+  display:inline-block;
+}
+.login-hybrid span.error {
+  width: 100%;
+}
+.logo{
+  margin:0 0 0 $base-margin;
+  img{
+    padding-top:$base-padding/4;
+  }
+  @include media($smalldesk){
+    text-align:center;
+    float:left;
+    img{
+      max-width:5em;
+    }
+  }
+  @include media($mobile){
+    text-align:left;
+    width:auto;
+  }
+}
+.applogo{
+  @include clearfix();
+  a{ text-decoration:none;}
+  h2{ font-size:1.2em; margin:$base-margin/2 0;}
+}
+.waiting{
+  margin:$base-margin 0;
+}
+
+/*content*/
+.icons-banner-front{
+  @include clearfix();
+  font-size:4em;
+  text-align:center;
+  padding:$base-padding;
+  width:auto;
+  line-height:1.3em;
+  @include media($mobile) {
+    font-size:2.5em;
+  }
+}
+.banner-front{
+  margin-bottom: 0;
+  @include media($mobile) {
+    background-color:$color-primary;
+    padding:$base-padding;
+    * {
+      color:white;
+    }
+  }
+}
+.content-front{
+  @include media($mobile) {
+    margin-top:$base-margin*2;
+  }
+}
+.ad-container{
+  @include clearfix();
+}
+.placeholder-img{
+  height:auto;
+  display:block;
+  width:32%;
+  float:left;
+  @include omega;
+}
+.placeholder-img img{
+  max-width:100%;
+}
+
+/*tabs*/
+.tab.hide  { display: none; }
+.tab.show { display: block; }
+.tab-show{ font-weight: bold;}
+/*errors and messages*/
+.error { display: block; }
+.error.inline { display: inline-block; }
+.error, .error_notification, .error_notification a { color: lighten($color-red, 14%); }
+.login.front .error { color: lighten($color-red, 35%); }
+.button-bar .error { background: none; color: $color-red; }
+.error.button-bar-last-span.selected { box-shadow: none; }
+
+.notice{ display:block; }
+.notice, .notice_notification, .notice_notification a { color: $color-green; }
+
+.error_notification{ @include notification($color-red); }
+.notice_notification{ @include notification($color-green); }
+
+p.error_notification:before { @include notification-icon('\2639'); }
+p.notice_notification:before { @include notification-icon('\263B'); }
+
+/* Receipt */
+.cart-receipt{
+  border:1px solid $color-light;
+  @extend %boxRadius-big;
+  overflow:hidden;
+  td{
+    padding:$base-padding/2;
+    vertical-align:bottom;
+  }
+  tr{
+    border-bottom:1px solid;
+  }
+  tr:last{
+    border-bottom:none;
+  }
+  h5{
+    margin-top:0;
+  }
+  a{
+    text-decoration:none;
+  }
+  @include media($mobile) {
+    table{
+      width:100%;
+    }
+    .print_link{
+      display:none;
+    }
+  }
+}
+.member-primary, .member-assoc{
+  border:1px solid $color-light;
+  @extend %boxRadius-big;
+  overflow:hidden;
+  .inner{
+    padding:$base-padding/4;
+  }
+}
+.member-primary[class*="grid"], .member-assoc[class*="grid"]{
+  margin-right:$base-margin/2;
+}
+
+.progress-receipt{
+  h5{
+    margin-bottom:$base-margin/4;
+    color:$color-dark;
+  }
+}
+.upsell-receipt{
+  padding-top:$base-padding*1.5;
+  border-top:1px solid $color-light;
+}
+
+/* Pointers */
+#add_associates, #remove_associates, .button-bar, .button-bar label, { cursor: pointer; }
+
+/* UI effects */
+#nowloading { display: inline; position: relative; left: 40px; }
+.spinner { display: inline; top: 15px; left: 15px; }
+
+/* CAA Dollars History */
+.caa-dollars-table { width: 100%; }
+.caa-dollars-table thead td { font-size: 1.25em; font-weight: bold; }
+.caa-dollars-table tbody td { border-top: 1px solid $color-superlight; }
+
+/* Welcome */
+.welcome{
+  @extend %boxRadius-big;
+  background:$color-white;
+  border:$base-border-thickness $color-border solid;
+  @include clearfix();
+  padding: 0 $base-padding $base-padding;
+  position:relative;
+  overflow:hidden;
+  header{
+    position:absolute;
+    top:0; right:0;
+    .logo{
+      padding:$base-padding/2 0 0 $base-padding/2 ;
+    }
+  }
+  .logo img{
+    max-width:80%;
+  }
+}
+.welcome-images{
+  overflow:hidden;
+  line-height:0;
+}
+.welcome-content{
+  @include clearfix();
+  padding-top:$base-padding;
+  .progress-container{
+    margin-bottom:$base-margin/2;
+  }
+}
+.close-button{
+  cursor:pointer;
+  position:absolute;
+  top:$base-margin;
+  right:$base-margin;
+  font-size:1.3em;
+}
+/* Print Card */
+.member-card{
+  width:308px;
+  height:216px;
+  position:relative;
+}
+.card-front{
+  background:url(asset-path("membership-cards/temporary/front.png")) no-repeat;
+}
+.card-back{
+  background:url(asset-path("membership-cards/temporary/back.png")) no-repeat;
+}
+.card-hd{
+  font-size:8px;
+  color:#000;
+  text-transform:uppercase;
+}
+.card-data{
+  font-family: 'Times New Roman', serif;
+  color:#000;
+  font-weight:bold;
+}
+.card-hd, .card-data{
+  position:absolute;
+}
+.card-clubcode{
+  left:50px; top:70px;
+}
+.card-memnum{
+  left:115px; top:70px;
+}
+.card-membershipnum{
+  font-size:22px;
+  left:35px;top:95px;
+}
+.card-exp{
+  left:50px;top:124px;
+}
+.card-expdate{
+  font-size:12px;
+  left:85px;top:136px;
+}
+.card-name{
+  font-size:17px;
+  left:25px;top:156px;
+}
+
+/* FAQ */
+#faq {margin-left: ($base-margin * 1.25); }
+#faq dt { cursor: pointer; line-height: 1.25em; }
+#faq dt:before { @include faq-icon('\002B'); }
+#faq dt.expanded:before { @include faq-icon('\002D'); }
+
+/* Member info */
+ul.member-info {
+  margin-left:0;
+  li {
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+}

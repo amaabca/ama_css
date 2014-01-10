@@ -1,0 +1,10 @@
+@import "neat-helpers";
+//$visual-grid:true;
+$mobile: new-breakpoint(max-width 768px 6);
+$smalldesk: new-breakpoint(max-width 1099px 12);
+$landscape: new-breakpoint(orientation landscape);
+// Change the grid settings
+$column: 4.375em;
+$gutter: 1.25em;
+$grid-columns: 12;
+$max-width: 68.75em;

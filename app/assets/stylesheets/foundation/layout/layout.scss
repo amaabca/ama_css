@@ -1,0 +1,181 @@
+.container-fixed{
+  @include outer-container;
+}
+.container-fluid{
+  @include outer-container;
+  @include media($mobile) {
+    @include span-columns(6);
+  }
+  @include media($smalldesk){
+    padding:0 $base-padding;
+  }
+}
+/*grid*/
+.layout-side{
+  @include span-columns(2);
+  margin-bottom:$base-margin;
+  @include media($mobile) {
+    @include span-columns(6);
+  }
+}
+
+.layout-middle{
+  @include span-columns(8);
+  @include media($mobile) {
+    @include span-columns(6);
+  }
+}
+.layout-full{
+  @include outer-container;
+  @include span-columns(12);
+  @include omega;
+}
+.inner-half{
+  @include span-columns(6);
+  @extend %clearance;
+  @include media($mobile) {
+    @include span-columns(3);
+  }
+}
+.inner-quarter{
+  @include span-columns(3);
+  @extend %clearance;
+}
+.inner-quarter-3{
+  @include span-columns(9);
+  @extend %clearance;
+}
+.inner-full{
+  @include span-columns(12);
+  @include omega;
+  @extend %clearance;
+  @include media($mobile) {
+    @include span-columns(6);
+  }
+}
+
+.grid-1{
+  @include span-columns(1);
+  @extend %clearance;
+}
+.grid-2{
+  @include span-columns(2);
+  @extend %clearance;
+}
+.grid-3{
+  @include span-columns(3);
+  @extend %clearance;
+}
+.grid-4{
+  @include span-columns(4 of 12);
+  @extend %clearance;
+}
+.grid-5{
+  @include span-columns(5);
+  @extend %clearance;
+}
+.grid-6{
+  @include span-columns(6);
+  @extend %clearance;
+}
+.grid-7{
+  @include span-columns(7);
+  @extend %clearance;
+}
+.grid-8{
+  @include span-columns(8);
+  @extend %clearance;
+}
+.grid-9{
+  @include span-columns(9);
+  @extend %clearance;
+}
+.grid-10{
+  @include span-columns(10);
+  @extend %clearance;
+}
+.grid-11{
+  @include span-columns(11);
+  @extend %clearance;
+}
+.grid-12,.grid-full{
+  @include outer-container;
+  @include span-columns(12);
+  @include omega;
+}
+.grid-full{
+  float:none;
+}
+.grid-12{
+  @extend %clearance;
+}
+%clearance{
+  margin-bottom:$base-margin;
+  @include media($mobile) {
+    margin-bottom:$base-margin/2;
+  }
+}
+.no-clearance{
+  margin-bottom:0;
+  padding-bottom:0;
+}
+%padding-all{
+  padding:$base-padding;
+}
+%margin-all{
+  margin:$base-margin;
+}
+.omega{
+  /*last col*/
+  @include omega;
+}
+.alpha{
+  /*first col*/
+  clear:both;
+  zoom:1;
+}
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.center {
+  text-align: center;
+}
+.middle{
+  margin-left:auto;
+  margin-right:auto;
+  float:none;
+  &:last-child{
+    margin-right:auto;
+  }
+}
+.vertical-middle {
+  vertical-align: middle;
+}
+.inline{
+  display:inline-block;
+}
+.grid-1,.grid-5,.grid-7,.grid-11,.grid-12,.grid-full,.collapse{
+  /*100% width in 6 col grid for mobile - grids 2,3,4,6,10,9,8 don't collapse unless .collapse added to tag*/
+  @include media($mobile) {
+    @include span-columns(6);
+    margin-right:0;
+  }
+}
+.col{
+  display:table-cell;
+}
+.row{
+  padding:$base-padding/2 0;
+}
+.divide{
+  border-bottom:1px solid #ddd;
+  padding-bottom:$base-padding;
+}
+.clearfix{
+  @include clearfix();
+}

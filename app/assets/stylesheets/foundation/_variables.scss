@@ -1,0 +1,136 @@
+// --------------------------------------------------
+// BASE
+// --------------------------------------------------
+$base-font-family: Helvetica,Arial,sans-serif;
+$base-font-size: 16px;
+$base-font-size-em: 1em;
+$base-line-height: $base-font-size * 1.5;
+$base-vertical-margin: .5em 0 1em;
+$base-vertical-padding: .5em 0 1em;
+$base-padding: 20px;
+$base-margin: 20px;
+$base-border-thickness: 1px;
+$col-width: 60px;
+$col-margin: $base-margin;
+$box-radius-small: 2px;
+$box-radius-big: 5px;
+$gridcols: 12;
+$margin-vertical: 0 $base-margin;
+
+// --------------------------------------------------
+// THEME
+// --------------------------------------------------
+$color-ama-red:           #BB0B0E;
+$color-ama-blue:          #0F3C62;
+$color-primary:           $color-ama-blue; /*blue*/
+$color-secondary-a:       $color-ama-red; /*red*/
+$color-secondary-b:       #A3B219; /*olive*/
+$color-complimentary:     #A7A8A5; /*metal*/
+$color-superdark:         #222;
+$color-dark:              #555;
+$color-medium:            #999;
+$color-light:             #cacaca;
+$color-superlight:        #efefef;
+$color-text-alert:        #910f0f; // bold red
+$color-white:             #FFF; // white
+$base-font-color:         $color-primary;
+$color-red:               #8E0000;
+$color-blue:              #0C429D;
+$color-green:             #5F9600;
+
+$color-border:           $color-light;      // light grey
+$color-background:       $color-superlight;   // lightest grey
+$color-background-alt:   lighten($color-primary,40);   // light primary
+$color-background-alt2:  lighten($color-secondary-b,5); // light secondary-b
+$color-text:             $base-font-color;
+$color-text-alt:         $color-primary;
+$color-alert-bg:         lighten($color-text-alert,50);
+$color-text-callout:     $color-medium;
+$color-text-highlight:   invert($color-primary);
+
+$text-small:.84em;
+
+@mixin boxRadius($size){
+  @if $size == small{
+    -webkit-border-radius: $box-radius-small;
+    -moz-border-radius: $box-radius-small;
+    border-radius: $box-radius-small;
+  }
+  @else if $size == big{
+    -webkit-border-radius: $box-radius-big;
+    -moz-border-radius: $box-radius-big;
+    border-radius: $box-radius-big;
+  }
+  @else{
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+    border-radius: $size;
+  }
+}
+
+%boxRadius-small{
+  @include boxRadius(small);
+}
+%boxRadius-big{
+  @include boxRadius(big);
+}
+
+@mixin pushright($columns){
+  @include shift($columns);
+}
+
+@mixin makeColumn($columns){
+  width:(($col-width + $col-margin) * $columns) - $col-margin;
+  @if $columns < $gridcols{
+    float:left;
+  }
+}
+
+@mixin button-coloring($color) {
+  &:hover { background-color: darken($color,10); }
+  &:active{ background-color: darken($color,15); color:$color-white; }
+}
+
+@mixin notification($color) {
+  background: lighten($color, 65%);
+  border: 1px solid lighten($color, 20%);
+  margin: 0 0 ($base-margin) 0;
+  padding: ($base-padding / 4);
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
+  @extend %boxRadius-big;
+}
+@mixin notification-icon($content) { content:$content; font-family: "SSSymbolicons"; vertical-align: middle; margin-right: 5px; }
+
+@mixin faq-icon($icon) { content: $icon; font-family: "SSSymbolicons"; vertical-align: middle; margin-right: ($base-margin / 4); }
+
+@mixin clearfix(){
+  display: block;
+  *zoom: 1;
+    &:before,
+    &:after {
+      display: table;
+      content: "";
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+@mixin wrapper($padding, $min-height) {
+  padding: $padding;
+  margin-top: $base-margin;
+  min-height: $min-height;
+  @include media($mobile) {
+    min-height:0;
+  }
+}
+
+@mixin levels($color, $value, $border-radii) {
+  background-color:lighten($color, $value);
+  color:$color-white;
+  border-radius: $border-radii;
+}
+
+%clearfix{
+  @include clearfix();
+ }

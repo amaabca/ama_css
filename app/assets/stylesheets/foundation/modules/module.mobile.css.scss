@@ -1,0 +1,550 @@
+/*components*/
+.inner{
+  padding:0 $base-padding*.25;
+}
+.box{
+  @include boxRadius(big);
+  padding: $base-padding / 2;
+}
+.widget{
+  @extend .box;
+}
+.widget.outline{
+  border: $color-border $base-border-thickness solid;
+  padding:0;
+  overflow:hidden;
+  h4{
+    margin-top:0;
+    -webkit-border-radius: 0 0 $box-radius-big 0;
+    -moz-border-radius: 0 0 $box-radius-big 0;
+    border-radius: 0 0 $box-radius-big 0;
+    padding:$base-padding/2;
+    color:$color-white;
+    background-color:$color-primary;
+    width:20em;
+    margin-bottom:0;
+  }
+}
+.widget.outline.receipt-renew{
+  padding:$base-padding;
+}
+.widget.filled{
+  background-color: lighten($color-primary,70);
+}
+footer{
+  margin-top:$base-margin;
+}
+
+/* Menus */
+nav li{
+  list-style:none;
+  margin:0 0 1.2em 0;
+  padding:0;
+}
+nav ul{
+  margin-left:0;
+}
+.menu-hybrid{
+  position:absolute;
+  background-repeat:no-repeat;
+  background-position:right top;
+  width:16em;
+  cursor:pointer;
+  top:$base-margin;
+  right:$base-margin;
+  .menu{
+    display:none;
+  }
+  .menu li a{
+    display:inline-block;
+    padding-bottom:$base-padding/4;
+    color:$color-white;
+  }
+  .ss-icon{
+    font-size:2em;
+  }
+  .menu-profile, .menu-www{
+    padding:$base-padding/2;
+    -webkit-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow:    1px 1px 2px rgba(50, 50, 50, 0.4);
+    box-shadow:         1px 1px 2px rgba(50, 50, 50, 0.4);
+    @extend %boxRadius-small;
+    @extend .color-primary;
+  }
+}
+.menu-profile{
+  label{
+    color:$color-white;
+  }
+}
+.menu-hybrid.show{
+  height:auto;
+  z-index:100;
+  .menu{
+    display:block;
+    margin-bottom:$base-margin/4;
+  }
+  .ss-icon{
+    color:$color-white;
+  }
+}
+.menu-pricing{
+  text-align:right;
+}
+
+.applogo{
+  h2{
+    font-size:1.3em;
+    margin:0;
+  }
+  a{
+    text-decoration:none;
+  }
+}
+/* Forms */
+label{
+  margin:0 $base-margin/5 $base-margin/5 0;
+}
+// our version of simpleform doesn't support per item (checkbox + label) css
+label.collection_radio, label.inline, label[for=primary_membership_automatic_credit_card_renewal], label[for=primary_membership_electronic_billing],
+label[for=promo_membership_automatic_credit_card_renewal], label[for=promo_membership_electronic_billing], label[for=renewal_electronic_billing],
+label[for=renewal_automatic_credit_card_renewal] {
+  display: inline;
+  padding-left: 5px;
+}
+#profile_accumulate_caa_dollars{
+  width:100%;
+}
+.subscriptions label {
+  display: inline-block;
+  margin-left: $base-margin/4;
+}
+
+.control{
+  display:block;
+  margin-bottom:$base-margin/2;
+}
+
+.control.subscriptions {
+  display:block;
+  margin-top:$base-margin*1.2;
+  margin-bottom:0;
+}
+
+.control.inline{
+  @extend %clearfix;
+  label{ display:inline-block;
+    margin:0 $base-margin/2 $base-margin/5 0;
+  }
+  input{
+    margin:0 $base-margin/5;
+  }
+}
+
+.control.inline-strict {
+  display: inline;
+}
+
+.control-button{
+  margin-top:$base-margin;
+}
+
+.controls.inline-form{
+  @extend %clearfix;
+  .control,button{
+    display:inline-block;
+    margin:0 $base-margin/5 $base-margin/5 0;
+    vertical-align:bottom;
+    input[type=text],input[type=email]{
+      float:none;
+      display:block;
+      width:100%;
+    }
+  }
+}
+
+.actions {
+  margin:$base-margin 0;
+}
+
+/* Buttons */
+@mixin button-coloring($color) {
+  background-color: darken($color,10);
+}
+
+button, .button, .button-small{
+  @extend %boxRadius-big;
+  border: 0;
+  padding: $base-padding/2;
+  text-align: center;
+  background-color: $color-ama-red;
+  color: $color-white;
+  width: 100%;
+}
+.button:active, .button:focus{
+  background:#333;
+}
+.button-danger{
+  @extend %bg-red;
+  &:active{ @include button-coloring($color-red); }
+}
+.button-neutral{
+  @extend %bg-blue;
+  &:active{ @include button-coloring($color-blue); }
+}
+.button-success{
+  @extend %bg-green;
+  &:active{ @include button-coloring($color-green); }
+}
+.button-theme{
+  @extend .color-primary;
+  &:active{ @include button-coloring($color-primary); }
+}
+.button-small{
+  padding: $base-padding/5;
+  font-size: .9em;
+}
+/* Inputs/form elements */
+input.input-stretch{ width:100%;}
+input.input-large{ width:100%}
+input.input-medium{ width:100%;}
+input.input-short{ width:50%;}
+input.input-small{ width:15%;}
+
+fieldset{
+  @include clearfix();
+}
+
+.associate .fieldset{
+  border:1px solid $color-border;
+  padding:$base-padding/2;
+  margin-bottom:$base-margin;
+}
+
+.module_section{
+  margin-top: $base-margin;
+  padding: $base-padding;
+  border: 1px solid $color-border;
+  @extend %boxRadius-big;
+}
+/* Content */
+
+.pricing,.tab{
+  @include outer-container;
+}
+.pricing .col{
+  text-align:center;
+}
+
+.icons-banner-front{
+  font-size:3.5em;
+  padding:$base-padding $base-padding $base-padding 0;
+  width:auto;
+  line-height:1.3em;
+}
+
+/* Table - pricing */
+.table-pricing{
+  padding:$base-padding 0;
+  @include outer-container;
+}
+
+.pricing-basic, .pricing-plus, .pricing-plusrv{
+  padding:0 $base-padding $base-padding;
+  @extend %boxRadius-small;
+  margin-bottom:$base-padding;
+  @include media($mobile) {
+    width:100%;
+  }
+}
+.table-pricing h3{
+  margin:0;
+  padding-top:$base-padding/2;
+}
+.table-pricing h6{
+  margin:0;
+}
+.table-pricing h5{
+  margin:$base-margin/2 auto;
+  color:$color-dark;
+}
+.price{
+  font-size:1.5em;
+  font-weight:bold;
+}
+.table-pricing span{
+  font-size:.8em;
+}
+.wrap-benefits{
+  margin:$base-margin/2;
+  @extend %boxRadius-small;
+}
+.wrap-coverage{
+  background-color:$color-white;
+  padding: $base-padding/2;
+  @extend %boxRadius-small;
+}
+.wrap-options{
+  padding: $base-padding/2 $base-padding $base-padding/2;
+  margin-top: $base-margin;
+}
+.table-pricing a.button{display:inline-block;}
+.yes ,.yes a{
+  color:$color-green;
+  font-weight:bold;
+}
+.col{
+  background:$color-superlight;
+}
+
+/* Receipt */
+.cart-receipt{
+  margin-top:$base-margin;
+}
+.cart-receipt table{
+  width:100%;
+}
+.cart-receipt td{
+  padding:$base-padding/2;
+  vertical-align:bottom;
+}
+.cart-receipt tr{
+  border-bottom:1px solid;
+}
+.cart-receipt tr:last{
+  border-bottom:none;
+}
+.member-primary, .member-assoc{
+  border:1px solid $color-light;
+  @extend %boxRadius-big;
+  .inner{
+    padding:$base-padding/4;
+  }
+}
+.cart-receipt, .member-primary, .member-assoc{
+  margin-bottom:$base-margin;
+}
+.progress-receipt{
+  h5{
+    margin-bottom:$base-margin/4;
+    color:$color-dark;
+  }
+}
+.progress-container{
+  @extend %boxRadius-small;
+  border:$base-border-thickness solid $color-medium;
+  background:$color-light;
+  @include clearfix();
+}
+.progress-bar{
+  float:left;
+  width:25%;
+  @extend %boxRadius-small;
+  height:$base-padding*1.5;
+  border-right:$color-medium 1px solid;
+}
+.progress-bar-default{
+  background:$color-superlight;
+}
+.progress-bar-done{
+  background:lighten($color-green,50);
+}
+.progress-bar-next{
+  background:lighten($color-blue,50);
+}
+.progress-bar-done{
+  span{
+    position:relative;
+    top:5px;
+  }
+}
+.progress-labels{
+  @include clearfix();
+}
+.progress-label{
+  float:left;
+  width:25%;
+  font-size:.88em;
+  padding:0 $base-padding/2;
+  color:$color-dark;
+}
+.progress-label-done, .progress-bar-done{
+  color:$color-green;
+}
+.progress-cta{
+  font-size:1.3em;
+  color:$color-blue;
+}
+.step{
+  @extend %boxRadius-small;
+  color:$color-white;
+  padding:3px 6px;
+  text-align:center;
+}
+.step.default{
+  background-color:$color-light;
+  color:$color-dark;
+}
+.step.next{
+  background-color:$color-blue;
+}
+.step.done{
+  background-color:$color-green;
+}
+.upsell-receipt{
+  padding:$base-padding/2 0;
+  margin:$base-margin/2 0;
+  border-top:$base-border-thickness dotted $color-light;
+}
+
+/* CAA Dollars History */
+.caa-dollars-table { width: 100%; }
+.caa-dollars-table thead td { font-size: 1.25em; font-weight: bold; }
+.caa-dollars-table tbody td { border-top: 1px solid $color-superlight; }
+
+/* Welcome */
+.welcome{
+  @extend %boxRadius-big;
+  background:$color-white;
+  border:$base-border-thickness $color-border solid;
+  @include clearfix();
+  padding:$base-padding*2 $base-padding $base-padding;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:$base-margin*2;
+  header{
+    position:absolute;
+    top:0; right:0;
+    .logo{
+      padding:$base-padding/2 0 0 $base-padding/2 ;
+    }
+  }
+  .logo img{
+    max-width:80%;
+  }
+}
+.close-button{
+  position:absolute;
+  right:$base-padding;
+  top:$base-padding;
+  cursor:pointer;
+  font-size:1.5em;
+}
+.welcome-images{
+  overflow:hidden;
+  border-radius:0 0 0 5px;
+  line-height:0;
+}
+.welcome-content{
+  @include clearfix();
+  .progress-container{
+    margin-bottom:$base-margin/2;
+  }
+  .widget{
+    width:100%;
+  }
+}
+
+.login.front{
+  display:none;
+  margin-bottom:$base-margin;
+  padding-bottom:$base-padding;
+  border-bottom:1px $color-border solid;
+}
+.users .login.front{
+  display:block;
+}
+.login-hybrid .control span{
+  margin-right: 30px;
+  display:inline-block;
+}
+.login-reveal{
+  display:inline-block;
+  margin-bottom:$base-margin;
+}
+.users .login-reveal{
+  display:none;
+}
+.banner-front{
+  background-color: $color-primary;
+  padding:$base-padding;
+  @extend %boxRadius-big;
+}
+.users .banner-front{
+  display:none;
+}
+.banner-front *{
+  color: $color-white;
+}
+.resetpw{
+    display:inline-block;
+    padding-bottom:$base-padding/2;
+}
+#create-form{
+  h5{
+      background:$color-primary;
+      padding:$base-padding;
+      @include boxRadius(big);
+      color:$color-white;
+    }
+}
+
+/*tabs*/
+.tab.hide{ display:none; }
+.tab.show{ display:block; }
+.tab-control{ border:none; }
+
+/*errors and messages*/
+.error{ display:block; }
+.error.inline{ display:inline-block; }
+
+.error{ display:block; }
+.error.inline{ display:inline-block; }
+.error, .error_notification{ color: lighten($color-red, 14%); }
+.login.front .error { color: lighten($color-red, 35%); }
+
+.notice{ display: block; }
+.notice, .notice_notification{ color: $color-green; }
+
+@mixin notification($color) {
+  background:lighten($color, 65%);
+  border: 1px solid lighten($color, 20%);
+  margin: 0 0 ($base-margin) 0;
+  padding: ($base-padding / 4);
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
+  @extend %boxRadius-big;
+}
+.error_notification{ @include notification($color-red); }
+.notice_notification{ @include notification($color-green); }
+
+@mixin notification-icon($content) { content:$content; font-family: "SSSymbolicons"; vertical-align: middle; margin-right: 5px; }
+p.error_notification:before { @include notification-icon('\2639'); }
+p.notice_notification:before { @include notification-icon('\263B'); }
+
+/* UI effects */
+#nowloading { display: inline; position: relative; left: 40px; }
+.spinner { display: inline; top: 15px; left: 15px; }
+
+/* Member info */
+ul.member-info {
+  margin-left:0;
+  li {
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+}
+
+.ad-container{
+  @include clearfix();
+}
+.placeholder-img{
+  height:auto;
+  display:block;
+  width:32%;
+  float:left;
+  @include omega;
+}
+.placeholder-img img{
+  max-width:80%;
+}

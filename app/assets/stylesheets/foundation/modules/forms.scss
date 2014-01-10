@@ -1,0 +1,140 @@
+label{
+  margin: 0 $base-margin/5 $base-margin/5 0;
+}
+
+// our version of simpleform doesn't support per item (checkbox + label) css
+label.collection_radio_buttons, label.inline {
+  display: inline;
+  padding-left: 5px;
+}
+
+.control{
+  display:block;
+  margin-bottom:$base-margin;
+}
+
+.actions{
+  margin:$base-margin/2 0;
+}
+
+.action-link{
+  margin-top:$base-margin/2;
+}
+
+.control.inline{
+  @extend %clearfix;
+  label{ display:inline-block;
+    margin: 0 $base-margin/2 $base-margin/5 0;
+  }
+  input{
+    margin: 0 $base-margin/5;
+  }
+}
+
+.control.inline-strict {
+  display: inline;
+}
+
+.control-button{
+  margin-top:$base-margin;
+}
+
+.controls.inline-form{
+  @extend %clearfix;
+  .control,button{
+    display:inline-block;
+    margin:0 $base-margin/5 $base-margin/5 0;
+    vertical-align:bottom;
+    input[type=text],input[type=email]{
+      float:none;
+      display:block;
+      width:100%;
+    }
+
+  }
+  @include media($mobile) {
+    .control{
+      width:100%;
+      margin-bottom:$base-margin/2;
+      display:block;
+      width:100%;
+    }
+  }
+}
+
+/* buttons */
+button, .button{
+  @extend %boxRadius-small;
+  border: 0;
+  padding: $base-padding/2;
+  text-align: center;
+  background-color: $color-ama-red;
+  color: $color-white;
+  @include button-coloring($color-ama-red);
+  @include media($mobile) {
+    width:100%;
+  }
+}
+
+.button:active, .button:focus{
+  background:#333;
+  color:$color-white;
+  @include media($mobile) {
+    width:100%;
+  }
+}
+
+.button-danger{
+  @extend %bg-red;
+  @include button-coloring($color-red);
+}
+
+.button-neutral{
+  @extend %bg-blue;
+  @include button-coloring($color-blue);
+}
+
+.button-success{
+  @extend %bg-green;
+  @include button-coloring($color-green);
+}
+
+.button-theme{
+  @extend .color-primary;
+  @include button-coloring($color-primary);
+}
+
+.button-small{
+  @extend %boxRadius-small;
+  padding:$base-padding/5;
+  font-size:.9em;
+}
+
+.button a, .button li{
+  color: $color-white;
+}
+
+/* inputs/form elements */
+input.input-stretch{ width:100%; }
+input.input-large{ width:90%; }
+input.input-medium{ width:75%; }
+input.input-short{ width:40%; }
+input.input-small{ width:30px; }
+input.input-large, input.input-medium {
+  @include media($mobile) {
+    @include span-columns(6);
+    width:100%;
+    float:none;
+  }
+}
+
+fieldset, .fieldset{
+  @include clearfix();
+}
+
+.module_section {
+  margin-top: $base-margin;
+  border:1px solid $color-border;
+  @extend %boxRadius-big;
+  padding: $base-padding/2 $base-padding;
+}

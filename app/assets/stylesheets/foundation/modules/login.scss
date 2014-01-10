@@ -1,0 +1,36 @@
+.login.front{
+  display:block;
+  background-color: $color-primary;
+  color: $color-white;
+  @extend %boxRadius-big;
+
+}
+.users .login.front{
+  display:block;
+}
+.login.front label, .login.front a, .login.front p, .login.front.error {
+  color: $color-white;
+}
+.login.front input[type=text]{
+  border:none;
+}
+.login-reveal{
+  display:none;
+}
+.users .login-reveal{
+  display:none;
+}
+.resetpw{
+    display:inline-block;
+    padding-bottom:$base-padding/2;
+}
+.login-hybrid .control span{
+  margin-right: 30px;
+  display:inline-block;
+}
+.login-hybrid span.error {
+  width: 100%;
+}
+.create_account {
+  display: none;
+}

@@ -1,0 +1,65 @@
+.color-border             { border: $color-border 1px solid; }
+.color-background         { background-color: $color-background; }
+.color-background-alt     { background-color: $color-background-alt; }
+.color-background-alt2    { background-color: $color-background-alt2; }
+.color-alert-background   { background-color: $color-alert-bg}
+.color-text               { color: $color-text; }
+%color-text{
+  @extend .color-text;
+}
+.color-text-alt           { color: $color-text-alt; }
+.color-text-alert         { color: $color-text-alert; }
+.color-text-callout       { color: $color-text-callout; }
+.color-text-highlight     { background-color: $color-text-highlight; }
+.color-alert-error        { color: $color-text-alert; }
+.color-text-green         { color:$color-green; }
+.color-text-red           { color:$color-red; }
+.color-text-blue          { color:$color-blue; }
+
+a { color: $color-text-alt; }
+a.button,
+a.button-small,
+a.button:visited,
+a.button-small:visited {
+  color: $color-white;
+  text-decoration: none;
+}
+
+.text-small{
+  font-size:.88em;
+}
+
+.color-primary{
+  background: $color-primary;
+  color: $color-white;
+}
+.color-secondary-a{
+  background: $color-secondary-a;
+  color: $color-white;
+}
+.color-secondary-b{
+  background: $color-secondary-b;
+  color: $color-white;
+}
+.color-complimentary{
+  background: $color-complimentary;
+  color: $color-white;
+}
+
+.color-superdark-text{ color: $color-superdark; color:$color-white;}
+.color-superdark-bg{ background-color: $color-superdark; color:$color-white;}
+.color-dark-text{ color: $color-dark; }
+.color-dark-bg{ background-color: $color-dark; color:$color-white;}
+.color-medium-text{ color: $color-medium; }
+.color-medium-bg{ background-color: $color-medium; color:$color-white;}
+.color-light-text{ color: $color-light; }
+.color-light-bg{ background-color: $color-light; }
+.color-superlight-text{ color: $color-superlight; }
+.color-superlight-bg{ background-color: $color-superlight; }
+.color-green, .color-success{ @extend %bg-green; color:$color-white;}
+.color-blue, .color-neutral{ @extend %bg-blue; color:$color-white;}
+.color-red, .color-danger{ @extend %bg-red; color:$color-white;}
+
+%bg-red{ background-color:$color-red; }
+%bg-blue{ background-color:$color-blue; }
+%bg-green{ background-color:$color-green; }
