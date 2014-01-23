@@ -1,6 +1,7 @@
 # AmaCss
+[![Gem Version](https://badge.fury.io/rb/ama_css.png)](http://badge.fury.io/rb/ama_css)
 
-TODO: Write a gem description
+Use it for basic css setup.
 
 ## Installation
 
