@@ -9,11 +9,11 @@ $base-vertical-margin: .5em 0 1em;
 $base-vertical-padding: .5em 0 1em;
 $base-padding: 20px;
 $base-margin: 20px;
-$base-border-thickness: 1px;
 $col-width: 60px;
 $col-margin: $base-margin;
-$box-radius-small: 2px;
+$box-radius-small: 3px;
 $box-radius-big: 5px;
+$box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 $gridcols: 12;
 $margin-vertical: 0 $base-margin;
 
@@ -21,7 +21,7 @@ $margin-vertical: 0 $base-margin;
 // THEME
 // --------------------------------------------------
 $color-ama-red:           #BB0B0E;
-$color-ama-blue:          #0F3C62;
+$color-ama-blue:          #00205b;
 $color-primary:           $color-ama-blue; /*blue*/
 $color-secondary-a:       $color-ama-red; /*red*/
 $color-secondary-b:       #A3B219; /*olive*/
@@ -47,6 +47,9 @@ $color-text-alt:         $color-primary;
 $color-alert-bg:         lighten($color-text-alert,50);
 $color-text-callout:     $color-medium;
 $color-text-highlight:   invert($color-primary);
+
+$base-border-thickness: 1px;
+$border: $base-border-thickness $color-light solid;
 
 $text-small:.84em;
 

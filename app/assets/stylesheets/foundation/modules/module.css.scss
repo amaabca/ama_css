@@ -344,10 +344,43 @@ p.notice_notification:before { @include notification-icon('\263B'); }
 
 /* Member info */
 ul.member-info {
-  margin-left:0;
   li {
     list-style:none;
     margin:0;
-    padding:0;
   }
+	&.right{
+		text-align:right;
+	}
+}
+
+.reward_dollars, .ebills {
+  margin: 7px;
+}
+/*Member info card in gatekeeper*/
+.card{
+	@include boxRadius(small);
+	width:30%;
+	border:$border;
+	margin:0 auto $base-margin*1.5;
+	padding-top:$base-padding/2;
+	box-shadow: $box-shadow;
+	li{
+		padding:0;
+	}
+	.action-footer{
+		background-color: $color-superlight;
+		border-top: $border;
+		margin-top:$base-margin/2;
+		a{
+			padding: $base-padding/2 $base-padding;
+			display: inline-block;
+			&:first-child{
+					border-right: $border;
+			}
+		}
+	}
+}
+.app-logged-in {
+	font-size: .75em;
+	line-height: 0;
 }
