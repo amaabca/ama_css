@@ -76,8 +76,7 @@ button, .button, .button-pill{
   }
 }
 
-button:active, .button:active, .button-pill:active,
-button:focus, .button:focus, .button-pill:focus{
+button:active, .button:active, .button-pill:active{
   background:#333;
   color:$color-white;
   @include media($mobile) {
