@@ -63,7 +63,7 @@ label.collection_radio_buttons, label.inline {
 }
 
 /* buttons */
-button, .button{
+button, .button, .button-pill{
   @extend %boxRadius-small;
   border: 0;
   padding: $base-padding/2;
@@ -76,12 +76,22 @@ button, .button{
   }
 }
 
-.button:active, .button:focus{
+button:active, .button:active, .button-pill:active,
+button:focus, .button:focus, .button-pill:focus{
   background:#333;
   color:$color-white;
   @include media($mobile) {
     width:100%;
   }
+}
+
+a.button, a.button-pill{
+  color:$color-white;
+  text-decoration: none;
+}
+
+.button-pill{
+  padding:$base-padding/5 $base-padding;
 }
 
 .button-danger{
@@ -110,8 +120,15 @@ button, .button{
   font-size:.9em;
 }
 
-.button a, .button li{
+button a:link,
+button a:active,
+button a:visited,
+.button a:link,
+.button a:active,
+.button a:visited,
+.button li{
   color: $color-white;
+  text-decoration: none;
 }
 
 /* inputs/form elements */

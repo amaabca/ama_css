@@ -125,6 +125,12 @@
 %margin-all{
   margin:$base-margin;
 }
+
+.vertical-padding{
+  padding-top: $base-padding;
+  padding-bottom: $base-padding;
+}
+
 .omega{
   /*last col*/
   @include omega;

@@ -1,6 +1,7 @@
 @import "neat-helpers";
 //$visual-grid:true;
-$mobile: new-breakpoint(max-width 768px 6);
+$mobile: new-breakpoint(max-width 767px 6);
+$tablet: new-breakpoint(min-width 768px max-width 860px 12);
 $smalldesk: new-breakpoint(max-width 1099px 12);
 $landscape: new-breakpoint(orientation landscape);
 // Change the grid settings
