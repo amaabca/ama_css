@@ -27,7 +27,7 @@
   @extend .box;
 }
 .widget.outline{
-  border: $color-border $base-border-thickness solid;
+  border: $border;
   padding:0;
   overflow:hidden;
   h4{
@@ -88,8 +88,8 @@
   display:none;
 }
 .resetpw{
-    display:inline-block;
-    padding-bottom:$base-padding/2;
+  display:inline-block;
+  padding-bottom:$base-padding/2;
 }
 .login-hybrid .control span{
   margin-right: 30px;
@@ -117,8 +117,13 @@
 }
 .applogo{
   @include clearfix();
-  a{ text-decoration:none;}
-  h2{ font-size:1.2em; margin:$base-margin/2 0;}
+  a{
+    text-decoration:none;
+  }
+  h2{
+    font-size:1.2em;
+    margin:$base-margin/2 0;
+  }
 }
 .waiting{
   margin:$base-margin 0;
@@ -349,7 +354,7 @@ ul.member-info {
     margin:0;
   }
   &.right{
-  text-align:right;
+    text-align:right;
   }
 }
 
@@ -365,19 +370,19 @@ ul.member-info {
   padding-top:$base-padding/2;
   box-shadow: $box-shadow;
   li{
-  padding:0;
+    padding:0;
   }
   .action-footer{
-  background-color: $color-superlight;
-  border-top: $border;
-  margin-top:$base-margin/2;
-  a{
-    padding: $base-padding/2 $base-padding;
-    display: inline-block;
-    &:first-child{
-      border-right: $border;
+    background-color: $color-superlight;
+    border-top: $border;
+    margin-top:$base-margin/2;
+    a{
+      padding: $base-padding/2 $base-padding;
+      display: inline-block;
+      &:first-child{
+        border-right: $border;
+      }
     }
-  }
   }
 }
 .app-logged-in {
