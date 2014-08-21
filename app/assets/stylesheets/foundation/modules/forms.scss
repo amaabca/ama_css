@@ -86,12 +86,12 @@ button:focus, .button:focus, .button-pill:focus{
 }
 
 a.button, a.button-pill{
-	color:$color-white;
-	text-decoration: none;
+  color:$color-white;
+  text-decoration: none;
 }
 
 .button-pill{
-	padding:$base-padding/5 $base-padding;
+  padding:$base-padding/5 $base-padding;
 }
 
 .button-danger{
@@ -128,7 +128,7 @@ button a:visited,
 .button a:visited,
 .button li{
   color: $color-white;
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* inputs/form elements */
