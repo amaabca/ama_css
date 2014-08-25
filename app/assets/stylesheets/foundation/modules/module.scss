@@ -301,10 +301,10 @@ p.notice_notification:before { @include notification-icon('\263B'); }
   position:relative;
 }
 .card-front{
-  background:url(asset-path("membership-cards/temporary/front.png")) no-repeat;
+  background:url(asset-path("membership-cards/front.png")) no-repeat;
 }
 .card-back{
-  background:url(asset-path("membership-cards/temporary/back.png")) no-repeat;
+  background:url(asset-path("membership-cards/back.png")) no-repeat;
 }
 .card-hd{
   font-size:8px;
