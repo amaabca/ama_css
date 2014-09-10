@@ -6,8 +6,8 @@ require 'ama_css/version'
 Gem::Specification.new do |spec|
   spec.name          = "ama_css"
   spec.version       = AmaCss::VERSION
-  spec.authors       = ["Darko Dosenovic", "Michael van den Beuken", "Ruben Estevez", "Jordan Babe", "Mathieu Gilbert", "Ryan Jones"]
-  spec.email         = ["darko.dosenovic@ama.ab.ca", "michael.beuken@gmail.com", "ruben.a.estevez@gmail.com", "jorbabe@gmail.com", "mathieu.gilbert@ama.ab.ca", "ryan.michael.jones@gmail.com"]
+  spec.authors       = ["Darko Dosenovic", "Michael van den Beuken", "Ruben Estevez", "Jordan Babe", "Mathieu Gilbert", "Ryan Jones", "Suniel Sambasivan"]
+  spec.email         = ["darko.dosenovic@ama.ab.ca", "michael.beuken@gmail.com", "ruben.a.estevez@gmail.com", "jorbabe@gmail.com", "mathieu.gilbert@ama.ab.ca", "ryan.michael.jones@gmail.com", "dravidian7@yahoo.com"]
   spec.summary       = ["CSS used by AMA apps"]
   spec.description   = ["This gem has been created to standardized use of css files for basic AMA applications."]
   spec.homepage      = ""
