@@ -23,8 +23,6 @@ a:hover{
   color: lighten($base-font-color,20);
 }
 
-dt { font-size: $base-font-size * 1.5; margin: 0 0 $base-margin 0; }
-dd { margin: 0 0 ($base-margin * 0.75) 0; }
 address { font-style: normal; }
 
 h1 {

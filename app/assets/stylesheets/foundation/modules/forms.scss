@@ -15,6 +15,16 @@ label.collection_radio_buttons, label.inline {
 
 .actions{
   margin:$base-margin/2 0;
+  a, input, button{
+    display: inline-block;
+    margin-right:$base-margin;
+    &:last-child{
+      margin-right:0;
+    }
+    @include media($mobile) {
+     margin-bottom:$base-margin/2;
+    }
+  }
 }
 
 .action-link{
@@ -154,4 +164,15 @@ fieldset, .fieldset{
   border:1px solid $color-border;
   @extend %boxRadius-big;
   padding: $base-padding/2 $base-padding;
+}
+
+.form-row{
+  margin:$base-margin 0;
+}
+
+.form-dialog{
+  @extend .widget;
+  @extend .centered;
+  @extend .collapse;
+  @extend .grid-4;
 }
