@@ -25,108 +25,27 @@
 }
 .widget{
   @extend .box;
-  &.outline{
-    border: $color-border $base-border-thickness solid;
-    padding:0;
-    overflow:hidden;
-    h4{
-      margin-top:0;
-      -webkit-border-radius: 0 0 $box-radius-big 0;
-      -moz-border-radius: 0 0 $box-radius-big 0;
-      border-radius: 0 0 $box-radius-big 0;
-      padding:$base-padding/2;
-      color:$color-white;
-      background-color:$color-primary;
-      width:20em;
-      margin-bottom:0;
-    }
+}
+.widget.outline{
+  border: $color-border $base-border-thickness solid;
+  padding:0;
+  overflow:hidden;
+  h4{
+    margin-top:0;
+    -webkit-border-radius: 0 0 $box-radius-big 0;
+    -moz-border-radius: 0 0 $box-radius-big 0;
+    border-radius: 0 0 $box-radius-big 0;
+    padding:$base-padding/2;
+    color:$color-white;
+    background-color:$color-primary;
+    width:20em;
+    margin-bottom:0;
   }
-  &.filled{
-    background-color: lighten($color-primary,70);
-  }
-  &.centered{
-    margin:auto;
-    float:none;
-    border:$border;
-    padding:$base-padding;
-    h1{
-      font-size:1.4em;
-      font-size:1.4rem;
-    }
-    h2{
-      font-size:1.2em;
-      font-size:1.2rem;
-    }
-  }
+}
+.widget.filled{
+  background-color: lighten($color-primary,70);
 }
 
-.panel{
-  @extend .widget;
-  @extend .grid-full;
-  @extend .collapse;
-  position:relative;
-  border: $border;
-  padding:$base-padding;
-  margin: $base-margin auto;
-  .item{
-    &:nth-child(2){
-      background: $color-superlight;
-    }
-  }
-}
-
-.login.front{
-  display:block;
-  background-color: $color-primary;
-  color: $color-white;
-  @extend %boxRadius-big;
-  @include media($mobile) {
-    display:none;
-    background:none;
-    h4{
-      display:none;
-    }
-  }
-}
-.users .login.front{
-  display:block;
-  @include media($mobile) {
-    h5{
-      background:$color-primary;
-      padding:$base-padding;
-      @include boxRadius(big);
-    }
-  }
-}
-.login.front label, .login.front a, .login.front p, .login.front.error {
-  color: $color-white;
-  @include media($mobile) {
-    color:$color-primary;
-  }
-}
-.login.front input[type=text]{
-  border:none;
-}
-.login-reveal{
-  display:none;
-  @include media($mobile) {
-    display:inline;
-  }
-}
-.users .login-reveal{
-  display:none;
-}
-.resetpw{
-  display:inline-block;
-  padding-bottom:$base-padding/2;
-}
-.login-hybrid .control span{
-  margin-right: 30px;
-  display:inline-block;
-}
-.login-hybrid span.error {
-  width: 100%;
-}
 .logo{
   margin:0 0 0 $base-margin;
   img{
@@ -146,13 +65,8 @@
 }
 .applogo{
   @include clearfix();
-  a{
-    text-decoration:none;
-  }
-  h2{
-    font-size:1.2em;
-    margin:$base-margin/2 0;
-  }
+  a{ text-decoration:none;}
+  h2{ font-size:1.2em; margin:$base-margin/2 0;}
 }
 .waiting{
   margin:$base-margin 0;
@@ -206,13 +120,13 @@
 /*errors and messages*/
 .error { display: block; }
 .error.inline { display: inline-block; }
-.error, .error_notification, .error_notification a { color: lighten($color-red, 14%); }
+.error, .error_notification{ color: lighten($color-red, 14%); }
 .login.front .error { color: lighten($color-red, 35%); }
 .button-bar .error { background: none; color: $color-red; }
 .error.button-bar-last-span.selected { box-shadow: none; }
 
 .notice{ display:block; }
-.notice, .notice_notification, .notice_notification a { color: $color-green; }
+.notice, .notice_notification { color: $color-green; }
 
 .error_notification{ @include notification($color-red); }
 .notice_notification{ @include notification($color-green); }
@@ -278,7 +192,6 @@ p.notice_notification:before { @include notification-icon('\263B'); }
 
 /* UI effects */
 #nowloading { display: inline; position: relative; left: 40px; }
-.spinner { display: inline; top: 15px; left: 15px; }
 
 /* CAA Dollars History */
 .caa-dollars-table { width: 100%; }
@@ -330,10 +243,16 @@ p.notice_notification:before { @include notification-icon('\263B'); }
   position:relative;
 }
 .card-front{
-  background:url(asset-path("membership-cards/front.png")) no-repeat;
+  background:url(image-path("membership-cards/temporary/front.png")) no-repeat;
 }
 .card-back{
-  background:url(asset-path("membership-cards/back.png")) no-repeat;
+  background:url(image-path("membership-cards/temporary/back.png")) no-repeat;
+}
+.premier-card-front{
+  background:url(image-path("membership-cards/temporary/premier-front.png")) no-repeat;
+}
+.premier-card-back{
+  background:url(image-path("membership-cards/temporary/premier-back.png")) no-repeat;
 }
 .card-hd{
   font-size:8px;
@@ -378,51 +297,10 @@ p.notice_notification:before { @include notification-icon('\263B'); }
 
 /* Member info */
 ul.member-info {
+  margin-left:0;
   li {
     list-style:none;
     margin:0;
-  }
-  &.right{
-    text-align:right;
-  }
-}
-
-.reward_dollars, .ebills {
-  margin: 7px;
-}
-/*Member info card in gatekeeper*/
-.card{
-  @include boxRadius(small);
-  width:30%;
-  border:$border;
-  margin:0 auto $base-margin*1.5;
-  padding-top:$base-padding/2;
-  box-shadow: $box-shadow;
-  li{
     padding:0;
   }
-  .action-footer{
-    background-color: $color-superlight;
-    border-top: $border;
-    margin-top:$base-margin/2;
-    a{
-      padding: $base-padding/2 $base-padding;
-      display: inline-block;
-      &:first-child{
-        border-right: $border;
-      }
-    }
-  }
-}
-.app-logged-in {
-  font-size: .75em;
-  line-height: 0;
-}
-
-.link-back{
-  @extend .align-right;
-}
-
-.actions-top{
-  @extend .align-right;
 }
