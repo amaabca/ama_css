@@ -25,27 +25,54 @@
 }
 .widget{
   @extend .box;
-}
-.widget.outline{
-  border: $color-border $base-border-thickness solid;
-  padding:0;
-  overflow:hidden;
-  h4{
-    margin-top:0;
-    -webkit-border-radius: 0 0 $box-radius-big 0;
-    -moz-border-radius: 0 0 $box-radius-big 0;
-    border-radius: 0 0 $box-radius-big 0;
-    padding:$base-padding/2;
-    color:$color-white;
-    background-color:$color-primary;
-    width:20em;
-    margin-bottom:0;
+  &.outline{
+    border: $color-border $base-border-thickness solid;
+    padding:0;
+    overflow:hidden;
+    h4{
+      margin-top:0;
+      -webkit-border-radius: 0 0 $box-radius-big 0;
+      -moz-border-radius: 0 0 $box-radius-big 0;
+      border-radius: 0 0 $box-radius-big 0;
+      padding:$base-padding/2;
+      color:$color-white;
+      background-color:$color-primary;
+      width:20em;
+      margin-bottom:0;
+    }
+  }
+  &.filled{
+    background-color: lighten($color-primary,70);
+  }
+  &.centered{
+    margin:auto;
+    float:none;
+    border:$border;
+    padding:$base-padding;
+    h1{
+      font-size:1.4em;
+      font-size:1.4rem;
+    }
+    h2{
+      font-size:1.2em;
+      font-size:1.2rem;
+    }
   }
 }
-.widget.filled{
-  background-color: lighten($color-primary,70);
+panel {
+  @extend .widget;
+  @extend .grid-full;
+  @extend .collapse;
+  position:relative;
+  border: $border;
+  padding:$base-padding;
+  margin: $base-margin auto;
+  .item {
+    &:nth-child(2){
+      background: $color-superlight;
+    }
+  }
 }
-
 .logo{
   margin:0 0 0 $base-margin;
   img{
@@ -63,10 +90,14 @@
     width:auto;
   }
 }
-.applogo{
+.applogo {
   @include clearfix();
-  a{ text-decoration:none;}
-  h2{ font-size:1.2em; margin:$base-margin/2 0;}
+  a {
+    text-decoration:none;
+  }
+  h2 {
+    font-size:1.2em; margin:$base-margin/2 0;
+  }
 }
 .waiting{
   margin:$base-margin 0;
@@ -120,13 +151,13 @@
 /*errors and messages*/
 .error { display: block; }
 .error.inline { display: inline-block; }
-.error, .error_notification{ color: lighten($color-red, 14%); }
+.error, .error_notification, .error_notification a { color: lighten($color-red, 14%); }
 .login.front .error { color: lighten($color-red, 35%); }
 .button-bar .error { background: none; color: $color-red; }
 .error.button-bar-last-span.selected { box-shadow: none; }
 
 .notice{ display:block; }
-.notice, .notice_notification { color: $color-green; }
+.notice, .notice_notification, .notice_notification a { color: $color-green; }
 
 .error_notification{ @include notification($color-red); }
 .notice_notification{ @include notification($color-green); }
@@ -192,6 +223,7 @@ p.notice_notification:before { @include notification-icon('\263B'); }
 
 /* UI effects */
 #nowloading { display: inline; position: relative; left: 40px; }
+.spinner { display: inline; top: 15px; left: 15px; }
 
 /* CAA Dollars History */
 .caa-dollars-table { width: 100%; }
