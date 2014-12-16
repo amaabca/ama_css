@@ -3,8 +3,13 @@ label{
 }
 
 // our version of simpleform doesn't support per item (checkbox + label) css
-label.collection_radio, label.inline, label[for=primary_membership_automatic_credit_card_renewal], label[for=primary_membership_electronic_billing],
-label[for=promo_membership_automatic_credit_card_renewal], label[for=promo_membership_electronic_billing], label[for=renewal_electronic_billing],
+label.collection_radio,
+label.inline,
+label[for=primary_membership_automatic_credit_card_renewal],
+label[for=primary_membership_electronic_billing],
+label[for=promo_membership_automatic_credit_card_renewal],
+label[for=promo_membership_electronic_billing],
+label[for=renewal_electronic_billing],
 label[for=renewal_automatic_credit_card_renewal] {
   display: inline;
   padding-left: 5px;

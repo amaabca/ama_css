@@ -2,7 +2,7 @@
 
 Bug fixes:
 
-* Fixed the forms.scss. ([#7][], [@mvandenbeuken][])s
+* Fixed the forms.scss. ([#7][], [@mvandenbeuken][])
 
 ## 2014-12-15
 
