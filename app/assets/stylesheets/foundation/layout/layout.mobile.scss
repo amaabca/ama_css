@@ -1,0 +1,133 @@
+body{
+  padding:0;
+}
+.container-fixed{
+  @include outer-container;
+  margin-bottom:$base-margin*2;
+}
+.container-fluid{
+  @include outer-container;
+  background:$color-white;
+  padding: $base-padding;
+   margin-bottom:$base-margin*2;
+ }
+/*grid*/
+.layout-side{
+  @include span-columns(2);
+  margin-bottom:$base-margin;
+}
+
+.layout-middle{
+  @include span-columns(8);
+}
+.layout-full{
+  @include outer-container;
+  @include span-columns(8);
+  @include omega;
+}
+.inner-half{
+  @include span-columns(4);
+  @extend %clearance;
+}
+.inner-quarter{
+  @include span-columns(2);
+  @extend %clearance;
+}
+.inner-quarter-3{
+  @include span-columns(6);
+  @extend %clearance;
+}
+.inner-full{
+  @include span-columns(8);
+  @include omega;
+  @extend %clearance;
+}
+
+.grid-1{
+  @include span-columns(1);
+  @extend %clearance;
+}
+.grid-2{
+  @include span-columns(2);
+  @extend %clearance;
+}
+.grid-3{
+  @include span-columns(3);
+  @extend %clearance;
+}
+.grid-4{
+  @include span-columns(4);
+  @extend %clearance;
+}
+.grid-5{
+  @include span-columns(5);
+  @extend %clearance;
+}
+.grid-6{
+  @include span-columns(6);
+  @extend %clearance;
+}
+.grid-7{
+  @include span-columns(7);
+  @extend %clearance;
+}
+.grid-8{
+  @include span-columns(8);
+  @extend %clearance;
+}
+.grid-full{
+  @include outer-container;
+  @include span-columns(8);
+  @include omega;
+  @extend %clearance;
+  float:none;
+  clear:both;
+}
+%clearance{
+  margin-bottom:$base-margin;
+}
+%no-clearance{
+  margin-bottom:0;
+}
+%padding-all{
+  padding:$base-padding;
+}
+%margin-all{
+  margin:$base-margin;
+}
+.no-clearance{
+  @extend %no-clearance;
+  padding-bottom:0;
+}
+.omega{
+  /*last col*/
+  @include omega;
+}
+.alpha{
+  /*first col*/
+  clear:both;
+  zoom:1;
+}
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.center {
+  text-align: center;
+}
+.inline{
+  display:inline-block;
+}
+.row{
+  padding:$base-padding/2 0;
+}
+.divide{
+  border-bottom:1px solid #ddd;
+}
+.vertical-middle {
+  vertical-align: middle;
+}

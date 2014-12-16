@@ -1,0 +1,116 @@
+.dropdown.hide{
+  display:none;
+  opacity:0;
+  @include media($mobile){
+    display:block;
+    opacity:1;
+  }
+}
+.dropdown.show{
+  display:block;
+  min-width:300px;
+  height:auto;
+  @include media($mobile){
+    width:100%;
+    box-shadow:1px 1px 1px darken($color-primary, 3);
+  }
+}
+.dropdown {
+  position: absolute;
+  z-index: 9999999;
+  padding:$base-padding/2;
+  @extend %boxRadius-big;
+  right:0;
+  top:0;
+  width:100%;
+  opacity:0;
+  a{
+    color:$color-white;
+  }
+  li{
+    font-size:.96em;
+    margin-bottom:$base-margin/4;
+    &:hover{
+      a{color:lighten($color-primary,70);}
+    }
+  }
+  label{
+    margin:0;
+    color:$color-white;
+    display:inline-block;
+  }
+  input{
+    border:0;
+  }
+  @include media($mobile){
+    position:static;
+  }
+}
+.dropdown-container{
+  position:relative;
+  & > a{
+    text-decoration:none;
+    font-weight:bold;
+  }
+}
+.dropdown-link{
+  display:block;
+  padding-right:$base-padding*1.5;
+  text-decoration:underline;
+}
+.dropdown-link .caret{
+  right: $base-margin * .4;
+  top: $base-margin;
+}
+
+.pointer-up{
+  width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid $color-dark;
+  position:absolute;
+  top:-6px;
+  content: "";
+  @include media($mobile){
+    display:none;
+  }
+}
+.pointer-up.right{right:8px;}
+.caret{
+  border-bottom:none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  border-top: 6px solid $color-white;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  @include media($mobile){
+    display:none;
+  }
+}
+.dropdown-link.open .caret{
+  border-top:none;
+  border-bottom: 6px solid $color-white;
+}
+.dropdown-close{
+  font-size:.92em;
+  text-decoration:underline;
+  cursor:pointer;
+  display:inline-block;
+  position:absolute;
+  top:$base-margin/4;
+  right:$base-margin/2;
+  @include media($mobile){
+    display:none;
+  }
+}
+.dropdown-divider{
+  padding:10px;
+  content:"";
+  @include media($mobile){
+    display:none;
+  }
+}

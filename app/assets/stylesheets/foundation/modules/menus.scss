@@ -1,0 +1,122 @@
+/* menus */
+nav li{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+nav ul{
+  margin-left:0;
+}
+.menu-hybrid{
+  margin-bottom:0;
+  .menu-profile, .menu-www{
+    margin-bottom:0;
+  }
+  @include clearfix();
+  @include media($smalldesk){
+    font-size:.9em;
+    width:auto;
+  }
+  @include media($mobile) {
+    float:right;
+    width:65%;
+  }
+}
+.menu-profile{
+  margin-right:$base-margin;
+}
+.menu-www{
+  margin-top:$base-margin/2;
+  li{
+    float:left;
+    margin-right:$base-margin;
+  }
+  a{
+    color:$color-white;
+    text-decoration:none;
+    &:hover{
+        color:lighten($color-primary,70);
+      }
+      &.active{
+        font-weight:bold;
+      }
+  }
+  @include clearfix();
+}
+.menu-desktop{
+  display:block;
+  @include media($mobile) {
+    display:none;
+  }
+}
+.menu-tablet{
+  display:none;
+  margin-top:1em;
+  font-size:1em;
+  font-weight:bold;
+  li{
+    margin-bottom:1em;
+  }
+  @include media($mobile) {
+    display:block;
+  }
+}
+.menu-profile-tablet, .menu-www-tablet{
+  display:none;
+  a{
+    color:$color-white;
+  }
+}
+.menu-toggle{
+  display:none;
+  color:#fff;
+   @include media($mobile) {
+     display:block;
+     font-size:2em;
+     padding:.5em .5em 0 0;
+   }
+}
+.menu-logout{
+  @include media($mobile) {
+    display:none;
+  }
+}
+.menu-pricing{
+  text-align:right;
+  @include media($mobile) {
+    @include span-columns(6);
+    width:100%;
+  }
+}
+.appmenu{
+  padding: 0;
+  ul{
+    margin-bottom: 0;
+    overflow: hidden;
+    @extend %boxRadius-big;
+  }
+  a{
+    text-decoration: none;
+    color: $color-dark;
+    background: darken($color-white,13.5%);
+    padding: $base-padding*.75 $base-padding;
+    display: block;
+    line-height:1.1em;
+    span{
+      font-weight:normal;
+      font-size:0.7em;
+    }
+    &.active{
+      background-color: $color-primary;
+      color: $color-white;
+      font-weight: bold;
+    }
+    &:hover{
+      background-color: lighten($color-primary,70);
+      color: $color-primary;
+    }
+  }
+  @include media($mobile) {
+    display: none;
+  }
+}
