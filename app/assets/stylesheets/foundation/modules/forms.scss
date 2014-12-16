@@ -3,9 +3,25 @@ label{
 }
 
 // our version of simpleform doesn't support per item (checkbox + label) css
-label.collection_radio_buttons, label.inline {
+label.collection_radio,
+label.inline,
+label[for=primary_membership_automatic_credit_card_renewal],
+label[for=primary_membership_electronic_billing],
+label[for=promo_membership_automatic_credit_card_renewal],
+label[for=promo_membership_electronic_billing],
+label[for=renewal_electronic_billing],
+label[for=renewal_automatic_credit_card_renewal] {
   display: inline;
   padding-left: 5px;
+}
+section.upgrade-renewal-options label {
+  font-weight: normal;
+  display: inline;
+}
+
+.subscriptions label {
+  display: inline-block;
+  margin-left: $base-margin/4;
 }
 
 .control{
@@ -13,24 +29,17 @@ label.collection_radio_buttons, label.inline {
   margin-bottom:$base-margin;
 }
 
-.actions{
-  margin:$base-margin/2 0;
-  a, input, button{
-    display: inline-block;
-    margin-right:$base-margin;
-    &:last-child{
-      margin-right:0;
-    }
-    @include media($mobile) {
-     margin-bottom:$base-margin/2;
-    }
-  }
+.subscriptions {
+  display: block;
+  margin: 0;
 }
 
+.actions{
+  margin:$base-margin/2 0;
+}
 .action-link{
   margin-top:$base-margin/2;
 }
-
 .control.inline{
   @extend %clearfix;
   label{ display:inline-block;
@@ -71,9 +80,14 @@ label.collection_radio_buttons, label.inline {
     }
   }
 }
-
+.automatic_credit_card_renewals #card_options{
+  display:block;
+}
+.automatic_credit_card_renewals #credit_card_renewal_form_toggle{
+  display:none;
+}
 /* buttons */
-button, .button, .button-pill{
+button, .button{
   @extend %boxRadius-small;
   border: 0;
   padding: $base-padding/2;
@@ -85,94 +99,67 @@ button, .button, .button-pill{
     width:100%;
   }
 }
-
-button:active, .button:active, .button-pill:active,
-button:focus, .button:focus, .button-pill:focus{
+.button:active, .button:focus{
   background:#333;
   color:$color-white;
   @include media($mobile) {
     width:100%;
   }
 }
-
-a.button, a.button-pill{
-  color:$color-white;
-  text-decoration: none;
-}
-
-.button-pill{
-  padding:$base-padding/5 $base-padding;
-}
-
 .button-danger{
   @extend %bg-red;
   @include button-coloring($color-red);
 }
-
 .button-neutral{
   @extend %bg-blue;
   @include button-coloring($color-blue);
 }
-
 .button-success{
   @extend %bg-green;
   @include button-coloring($color-green);
 }
-
 .button-theme{
   @extend .color-primary;
   @include button-coloring($color-primary);
 }
-
 .button-small{
   @extend %boxRadius-small;
   padding:$base-padding/5;
   font-size:.9em;
 }
-
-button a:link,
-button a:active,
-button a:visited,
-.button a:link,
-.button a:active,
-.button a:visited,
-.button li{
+.button a, .button li{
   color: $color-white;
-  text-decoration: none;
 }
 
 /* inputs/form elements */
-input.input-stretch{ width:100%; }
-input.input-large{ width:90%; }
-input.input-medium{ width:75%; }
-input.input-short{ width:40%; }
-input.input-small{ width:30px; }
-input.input-large, input.input-medium {
+input.input-stretch{ width:100%;}
+input.input-large{ width:90%}
+input.input-medium{ width:75%;}
+input.input-short{ width:40%;}
+input.input-small{ width:30px;}
+input.input-large, input.input-medium{
   @include media($mobile) {
     @include span-columns(6);
     width:100%;
     float:none;
   }
 }
-
 fieldset, .fieldset{
   @include clearfix();
 }
 
+.associate .fieldset{
+  border:1px solid $color-border;
+  padding:$base-padding/2;
+  margin-bottom:$base-margin;
+}
+
+.associate_item{
+  border-bottom:1px $color-light dotted;
+}
 .module_section {
   margin-top: $base-margin;
   border:1px solid $color-border;
   @extend %boxRadius-big;
   padding: $base-padding/2 $base-padding;
-}
-
-.form-row{
-  margin:$base-margin 0;
-}
-
-.form-dialog{
-  @extend .widget;
-  @extend .centered;
-  @extend .collapse;
-  @extend .grid-4;
 }
