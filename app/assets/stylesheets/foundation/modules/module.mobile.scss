@@ -548,3 +548,57 @@ ul.member-info {
 .placeholder-img img{
   max-width:80%;
 }
+.box{
+  @include boxRadius(big);
+  padding: $base-padding / 2;
+}
+.widget{
+  @extend .box;
+  &.outline{
+    border: $color-border $base-border-thickness solid;
+    padding:0;
+    overflow:hidden;
+    h4{
+      margin-top:0;
+      -webkit-border-radius: 0 0 $box-radius-big 0;
+      -moz-border-radius: 0 0 $box-radius-big 0;
+      border-radius: 0 0 $box-radius-big 0;
+      padding:$base-padding/2;
+      color:$color-white;
+      background-color:$color-primary;
+      width:20em;
+      margin-bottom:0;
+    }
+  }
+  &.filled{
+    background-color: lighten($color-primary,70);
+  }
+  &.centered{
+    margin:auto;
+    float:none;
+    border:$border;
+    padding:$base-padding;
+    h1{
+      font-size:1.4em;
+      font-size:1.4rem;
+    }
+    h2{
+      font-size:1.2em;
+      font-size:1.2rem;
+    }
+  }
+}
+panel {
+  @extend .widget;
+  @extend .grid-full;
+  @extend .collapse;
+  position:relative;
+  border: $border;
+  padding:$base-padding;
+  margin: $base-margin auto;
+  .item {
+    &:nth-child(2){
+      background: $color-superlight;
+    }
+  }
+}

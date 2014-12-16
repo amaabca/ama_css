@@ -83,6 +83,13 @@ body{
   float:none;
   clear:both;
 }
+.grid-1,.grid-5,.grid-7,.grid-11,.grid-12,.grid-full,.collapse{
+  /*100% width in 6 col grid for mobile - grids 2,3,4,6,10,9,8 don't collapse unless .collapse added to tag*/
+  @include media($mobile) {
+    width:100%;
+    margin-right:0;
+  }
+}
 %clearance{
   margin-bottom:$base-margin;
 }
