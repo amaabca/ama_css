@@ -588,7 +588,7 @@ ul.member-info {
     }
   }
 }
-panel {
+.panel {
   @extend .widget;
   @extend .grid-full;
   @extend .collapse;
