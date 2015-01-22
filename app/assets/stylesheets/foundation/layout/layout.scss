@@ -3,9 +3,6 @@
 }
 .container-fluid{
   @include outer-container;
-  @include media($mobile) {
-    @include span-columns(6);
-  }
   @include media($smalldesk){
     padding:0 $base-padding;
   }

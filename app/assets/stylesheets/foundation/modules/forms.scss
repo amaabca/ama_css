@@ -4,6 +4,7 @@ label{
 
 // our version of simpleform doesn't support per item (checkbox + label) css
 label.collection_radio,
+label.collection_radio_buttons,
 label.inline,
 label[for=primary_membership_automatic_credit_card_renewal],
 label[for=primary_membership_electronic_billing],
@@ -36,6 +37,13 @@ section.upgrade-renewal-options label {
 
 .actions{
   margin:$base-margin/2 0;
+  a, input, button {
+    display: inline-block;
+    margin-right:$base-margin;
+    @include media($mobile) {
+      margin-bottom:$base-margin/2;
+    }
+  }
 }
 .action-link{
   margin-top:$base-margin/2;
@@ -87,7 +95,7 @@ section.upgrade-renewal-options label {
   display:none;
 }
 /* buttons */
-button, .button{
+button, .button, .button-pill {
   @extend %boxRadius-small;
   border: 0;
   padding: $base-padding/2;
@@ -99,12 +107,21 @@ button, .button{
     width:100%;
   }
 }
-.button:active, .button:focus{
+button:active, .button:active, .button-pill:active,
+button:focus, .button:focus, .button-pill:focus {
   background:#333;
   color:$color-white;
   @include media($mobile) {
     width:100%;
   }
+}
+a.button, a.button-pill{
+  color:$color-white;
+  text-decoration: none;
+}
+
+.button-pill{
+  padding:$base-padding/5 $base-padding;
 }
 .button-danger{
   @extend %bg-red;
@@ -127,17 +144,23 @@ button, .button{
   padding:$base-padding/5;
   font-size:.9em;
 }
-.button a, .button li{
+button a:link,
+button a:active,
+button a:visited,
+.button a:link,
+.button a:active,
+.button a:visited,
+.button li {
   color: $color-white;
 }
 
 /* inputs/form elements */
-input.input-stretch{ width:100%;}
-input.input-large{ width:90%}
-input.input-medium{ width:75%;}
-input.input-short{ width:40%;}
-input.input-small{ width:30px;}
-input.input-large, input.input-medium{
+input.input-stretch{ width:100%; }
+input.input-large{ width:90%; }
+input.input-medium{ width:75%; }
+input.input-short{ width:40%; }
+input.input-small{ width:30px; }
+input.input-large, input.input-medium {
   @include media($mobile) {
     @include span-columns(6);
     width:100%;
@@ -163,3 +186,13 @@ fieldset, .fieldset{
   @extend %boxRadius-big;
   padding: $base-padding/2 $base-padding;
 }
+.form-row{
+  margin:$base-margin 0;
+}
+.form-dialog{
+  @extend .widget;
+  @extend .centered;
+  @extend .collapse;
+  @extend .grid-6;
+}
+
